@@ -14,7 +14,25 @@ import {
 import { useState } from 'react';
 
 const officers = [
-  
+  "Adam Freeman",
+  "Aidan Walker",
+  "Alexia Pacella",
+  "Benny Wan",
+  "Cody Ruhl",
+  "Connor Shulist", 
+  "Dan Merrill",
+  "Dawson Lake",
+  "Don Juranic",
+  "Emily Fraser",
+  "Grace Lombardi",
+  "Hunter Chantiam",
+  "Jamie Lee Ardizzi",
+  "Kathryn Robertson",
+  "Mia Charles",
+  "Shehreen Ahmed",
+  "Stephen Small",
+  "Taylor Unwin",
+  "Todd Holmes",
 ]
 
 const vehicles = [
@@ -55,13 +73,11 @@ export default function VehicleInspectionModal() {
                   value="Drivers Name"
                   className="ml-1"
                 />
-                <TextInput
-                  id="text"
-                  placeholder=""
-                  value=""
-                  onChange={(event) => setOperator(event.target.value)}
-                  required
-                />
+                <Select id="vehicle" defaultValue="">
+                  {officers.map((officer) => (
+                    <option key={officer}>{officer}</option>
+                  ))}
+                </Select>
               </div>
               <div>
                 <Label
