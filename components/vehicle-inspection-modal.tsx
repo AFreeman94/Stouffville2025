@@ -40,7 +40,6 @@ export default function VehicleInspectionModal() {
         Vehicle Inspection Report
       </Button>
       <Modal show={openModal} onClose={onCloseModal} size="4xl">
-        <form autoComplete="off">
           <Modal.Header className="bg-black">
             <span className="text-white">Vehicle Inspection Report</span>
           </Modal.Header>
@@ -55,7 +54,7 @@ export default function VehicleInspectionModal() {
                 <TextInput
                   id="text"
                   placeholder=""
-                  value={operator}
+                  value=""
                   onChange={(event) => setOperator(event.target.value)}
                   required
                 />
@@ -77,7 +76,7 @@ export default function VehicleInspectionModal() {
                 <TextInput
                   id="odometer"
                   placeholder=""
-                  value={operator}
+                  value=""
                   onChange={(event) => setOperator(event.target.value)}
                   required
                 />
@@ -290,7 +289,6 @@ export default function VehicleInspectionModal() {
               Cancel
             </Button>
           </Modal.Footer>
-        </form>
       </Modal>
     </>
   );
