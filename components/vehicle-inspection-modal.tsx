@@ -26,7 +26,7 @@ const vehicles = [
 ];
 
 export default function VehicleInspectionModal() {
-  const [openModal, setOpenModal] = useState<boolean>(true);
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const [operator, setOperator] = useState<string>();
 
   function onCloseModal() {
@@ -44,8 +44,8 @@ export default function VehicleInspectionModal() {
             <span className="text-white">Vehicle Inspection Report</span>
           </Modal.Header>
           <Modal.Body>
-            <div className="grid grid-cols-3 gap-4">
-              <div>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className=''>
                 <Label
                   htmlFor="operator"
                   value="Drivers Name"
@@ -94,7 +94,7 @@ export default function VehicleInspectionModal() {
               <hr />
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4">
               <div>
                 <div className="flex items-center gap-2">
                   <Checkbox id="Alarms / Warnings" value="Alarms / Warnings" />
@@ -174,7 +174,7 @@ export default function VehicleInspectionModal() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 my-4">
+            <div className="grid md:grid-cols-3 gap-4 my-4">
               <div>
                 <div className="flex items-center gap-2">
                   <Checkbox
