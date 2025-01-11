@@ -26,7 +26,7 @@ const officers = [
   "Emily Fraser",
   "Grace Lombardi",
   "Hunter Chantiam",
-  "Jamie Lee Ardizzi",
+  "Jamie Ardizzi",
   "Kathryn Robertson",
   "Mia Charles",
   "Shehreen Ahmed",
