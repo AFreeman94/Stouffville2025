@@ -14,6 +14,7 @@ import {
 import { useState } from 'react';
 
 const officers = [
+  "", 
   "Adam Freeman",
   "Aidan Walker",
   "Alexia Pacella",
@@ -50,10 +51,14 @@ const vehicles = [
 export default function VehicleInspectionModal() {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [operator, setOperator] = useState<string>();
+  const [vehicle, setVehicle] = useState<string>();
+  const [odometer, setOdometer] = useState<string>();
 
   function onCloseModal() {
     setOpenModal(false);
     setOperator('');
+    setVehicle('');
+    setOdometer('');
   }
 
   return (
@@ -73,8 +78,8 @@ export default function VehicleInspectionModal() {
                   value="Drivers Name"
                   className="ml-1"
                 />
-                <Select id="vehicle" defaultValue="">
-                  {officers.map((officer) => (
+                <Select id="operator" defaultValue={operator} onChange={(event) => setOperator(event.target.value)}>
+                  {officers.sort().map((officer) => (
                     <option key={officer}>{officer}</option>
                   ))}
                 </Select>
@@ -85,9 +90,9 @@ export default function VehicleInspectionModal() {
                   value="Vehicle Number"
                   className="ml-1"
                 />
-                <Select id="vehicle" defaultValue="">
-                  {vehicles.map((vehicle) => (
-                    <option key="vehicle">{vehicle}</option>
+                <Select id="vehicle" defaultValue={vehicle} onChange={(event) => setVehicle(event.target.value)}>
+                  {vehicles.sort().map((vehicle) => (
+                    <option key={vehicle}>{vehicle}</option>
                   ))}
                 </Select>
               </div>
@@ -96,8 +101,8 @@ export default function VehicleInspectionModal() {
                 <TextInput
                   id="odometer"
                   placeholder=""
-                  value=""
-                  onChange={(event) => setOperator(event.target.value)}
+                  value={odometer}
+                  onChange={(event) => setOdometer(event.target.value)}
                   required
                 />
               </div>
